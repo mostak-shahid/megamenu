@@ -1,0 +1,132 @@
+$mobile: 768px;
+$tab: 992px;
+$desktop: 1200px;
+$baseColor: #000000;
+$hoverColor: #333333;
+.menu-container {
+  background-color: #eaeaea;
+  color: $baseColor;
+  position: relative;
+  .menu-activator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    .menu-toggler {
+      border: 2px solid $baseColor;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+    }
+    @media screen and (min-width: $mobile) {
+      display: none;
+    }
+  }
+  .arrow {
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 900;
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    &:before {
+      content: "\f105";
+      @media screen and (min-width: $mobile) {
+        content: "\f107";
+      }
+    }
+    @media screen and (min-width: $mobile) {
+      width: auto;
+    }
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      position: relative;
+      a {
+        display: block;
+        text-decoration: none;
+        padding: 10px 15px;
+        color: $baseColor;
+        position: relative;
+      }
+      ul {
+        display: none;
+        background-color: #eaeaea;
+        a {
+          min-width: 150px;
+        }
+        @media screen and (min-width: $mobile) {
+          position: absolute;
+          left: 0;
+          .arrow {
+            margin-right: 15px;
+            &:before {
+              content: "\f105";
+            }
+          }
+          ul {
+            top: 0;
+            left: 100%;
+          }
+        }
+      }
+      @media screen and (min-width: $mobile) {
+        &:hover {
+          & > ul {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  & > ul {
+    display: none;
+    & > li {
+      @media screen and (min-width: $mobile) {
+        display: inline-block;
+      }
+    }
+    li.mega-menu {
+      @media screen and (min-width: $mobile) {
+        position: static;
+        .arrow {
+          display: none;
+        }
+        & > a {
+          &::after {
+            font-family: "Font Awesome 6 Pro";
+            font-weight: 900;
+            content: "\f107";
+          }
+        }
+        & > ul {
+          display: none;
+          width: 100%;
+          ul {
+            display: block;
+            position: relative;
+            left: 0;
+            top: 0;
+          }
+        }
+        &:hover {
+          & > ul {
+            display: flex;
+          }
+        }
+      }
+    }
+    @media screen and (min-width: $mobile) {
+      display: block;
+    }
+  }
+}

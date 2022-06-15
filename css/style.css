@@ -1,0 +1,164 @@
+.menu-container {
+  background-color: #eaeaea;
+  color: #000000;
+  position: relative;
+}
+
+.menu-container .menu-activator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 15px;
+}
+
+.menu-container .menu-activator .menu-toggler {
+  border: 2px solid #000000;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .menu-container .menu-activator {
+    display: none;
+  }
+}
+
+.menu-container .arrow {
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 900;
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.menu-container .arrow:before {
+  content: "\f105";
+}
+
+@media screen and (min-width: 768px) {
+  .menu-container .arrow:before {
+    content: "\f107";
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .menu-container .arrow {
+    width: auto;
+  }
+}
+
+.menu-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-container ul li {
+  position: relative;
+}
+
+.menu-container ul li a {
+  display: block;
+  text-decoration: none;
+  padding: 10px 15px;
+  color: #000000;
+  position: relative;
+}
+
+.menu-container ul li ul {
+  display: none;
+  background-color: #eaeaea;
+}
+
+.menu-container ul li ul a {
+  min-width: 150px;
+}
+
+@media screen and (min-width: 768px) {
+  .menu-container ul li ul {
+    position: absolute;
+    left: 0;
+  }
+  .menu-container ul li ul .arrow {
+    margin-right: 15px;
+  }
+  .menu-container ul li ul .arrow:before {
+    content: "\f105";
+  }
+  .menu-container ul li ul ul {
+    top: 0;
+    left: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .menu-container ul li:hover > ul {
+    display: block;
+  }
+}
+
+.menu-container > ul {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .menu-container > ul > li {
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .menu-container > ul li.mega-menu {
+    position: static;
+  }
+  .menu-container > ul li.mega-menu .arrow {
+    display: none;
+  }
+  .menu-container > ul li.mega-menu > a::after {
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 900;
+    content: "\f107";
+  }
+  .menu-container > ul li.mega-menu > ul {
+    display: none;
+    width: 100%;
+  }
+  .menu-container > ul li.mega-menu > ul ul {
+    display: block;
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+  .menu-container > ul li.mega-menu:hover > ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .menu-container > ul {
+    display: block;
+  }
+}
+/*# sourceMappingURL=style.css.map */
